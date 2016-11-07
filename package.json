@@ -1,0 +1,22 @@
+{
+  "name": "swrpg_act_1_seinar_console",
+  "version": "1.0.0",
+  "description": "Act 1 : Seinar Fleet Systems Advanced Projects Lab - Command Console",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theRemix/SW-RPG-Act-1-Seinar-Console.git"
+  },
+  "keywords": [
+    "rpg"
+  ],
+  "author": "Jon Borgonia <jon@gomagames.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theRemix/SW-RPG-Act-1-Seinar-Console/issues"
+  },
+  "homepage": "https://github.com/theRemix/SW-RPG-Act-1-Seinar-Console#readme"
+}
