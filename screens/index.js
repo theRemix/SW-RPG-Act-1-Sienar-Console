@@ -1,3 +1,4 @@
 module.exports = {
-  republicWatchList : require('./republicWatchList')
+  republicWatchList : require('./republicWatchList'),
+  comlinkRecordings : require('./comlinkRecordings'),
 };

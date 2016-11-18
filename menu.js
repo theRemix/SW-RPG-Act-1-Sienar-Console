@@ -4,7 +4,8 @@ const {
 } = require('blessed');
 
 const {
-  republicWatchList
+  republicWatchList,
+  comlinkRecordings,
 } = require('./screens');
 
 const mainMenuLabels = [
@@ -63,17 +64,15 @@ module.exports = screen => {
     }
   });
 
+  mainMenuScreens.set(BLANK_IDX, blank);
+  mainMenuScreens.set(0, republicWatchList(menu));
+  mainMenuScreens.set(1, comlinkRecordings(menu));
+
   menu.on('select', (obj, selectedIdx) => switchScreens(selectedIdx));
 
   screen.append(menu);
   screen.append(blank);
   menu.focus();
-
-  mainMenuScreens.set(0, republicWatchList(menu));
-  // mainMenuScreens.set(1, republicWatchList);
-  // mainMenuScreens.set(2, republicWatchList);
-  // mainMenuScreens.set(3, republicWatchList);
-  // mainMenuScreens.set(4, republicWatchList);
 
   return menu;
 };
