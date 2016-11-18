@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/theRemix/SW-RPG-Act-1-Seinar-Console/issues"
   },
-  "homepage": "https://github.com/theRemix/SW-RPG-Act-1-Seinar-Console#readme"
+  "homepage": "https://github.com/theRemix/SW-RPG-Act-1-Seinar-Console#readme",
+  "dependencies": {
+    "blessed": "^0.1.81"
+  }
 }
