@@ -3,11 +3,10 @@ const exec = require('child_process').exec;
 const screen = blessed.screen({
   smartCSR: true,
   useBCE: true,
+  dockBorders: true
 });
 
 const menu = require('./menu')(screen);
-
-
 
 
 const displaySplash = () => exec('/bin/sh -c "clear && imgcat assets/sienar-logo.png"', (error, stdout, stderr) => {

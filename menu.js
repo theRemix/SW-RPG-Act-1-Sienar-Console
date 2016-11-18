@@ -23,19 +23,13 @@ const blank = box({
 let currentScreen = blank;
 
 const mainMenuScreens = new Map();
-mainMenuScreens.set(0, republicWatchList);
-// mainMenuScreens.set(1, republicWatchList);
-// mainMenuScreens.set(2, republicWatchList);
-// mainMenuScreens.set(3, republicWatchList);
-// mainMenuScreens.set(4, republicWatchList);
-
 
 module.exports = screen => {
 
   const switchScreens = idx => {
     // currentScreen.detach();
     screen.remove(currentScreen);
-    currentScreen = republicWatchList;
+    currentScreen = mainMenuScreens.get(idx);
     screen.append(currentScreen);
     currentScreen.focus();
     screen.render();
@@ -74,6 +68,12 @@ module.exports = screen => {
   screen.append(menu);
   screen.append(blank);
   menu.focus();
+
+  mainMenuScreens.set(0, republicWatchList(menu));
+  // mainMenuScreens.set(1, republicWatchList);
+  // mainMenuScreens.set(2, republicWatchList);
+  // mainMenuScreens.set(3, republicWatchList);
+  // mainMenuScreens.set(4, republicWatchList);
 
   return menu;
 };
