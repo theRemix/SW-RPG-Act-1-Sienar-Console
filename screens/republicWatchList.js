@@ -112,7 +112,7 @@ module.exports = menu => {
     Array(5).fill('[--- BACK ---]')
   ]);
 
-  table.on('select', (obj, selectedIdx) => selectedIdx > directory.length ? menu.focus() : null);
+  table.on('select', (obj, selectedIdx) => selectedIdx > directory.length ? menu.back() : null);
 
   return table;
 };

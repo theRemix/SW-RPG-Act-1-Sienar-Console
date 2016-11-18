@@ -17,7 +17,10 @@ const mainMenuLabels = [
   'Logout',
 ];
 
+const BLANK_IDX = -1;
 const blank = box({
+  top : 0,
+  right : 0,
   width : '70%'
 });
 
@@ -28,11 +31,10 @@ const mainMenuScreens = new Map();
 module.exports = screen => {
 
   const switchScreens = idx => {
-    // currentScreen.detach();
-    screen.remove(currentScreen);
+     currentScreen.detach();
     currentScreen = mainMenuScreens.get(idx);
     screen.append(currentScreen);
-    currentScreen.focus();
+    if (idx !== BLANK_IDX){  currentScreen.focus(); }
     screen.render();
   };
 
@@ -64,6 +66,11 @@ module.exports = screen => {
     }
   });
 
+  menu.back = _ => {
+    switchScreens(BLANK_IDX);
+    menu.focus();
+  };
+
   mainMenuScreens.set(BLANK_IDX, blank);
   mainMenuScreens.set(0, republicWatchList(menu));
   mainMenuScreens.set(1, comlinkRecordings(menu));
@@ -71,7 +78,6 @@ module.exports = screen => {
   menu.on('select', (obj, selectedIdx) => switchScreens(selectedIdx));
 
   screen.append(menu);
-  screen.append(blank);
   menu.focus();
 
   return menu;

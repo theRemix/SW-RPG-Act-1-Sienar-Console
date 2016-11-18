@@ -28,9 +28,6 @@ const init = () => {
     return process.exit(0);
   });
 
-  // Focus our element.
-  // menu.focus();
-
   // Render the screen.
   screen.render();
 
