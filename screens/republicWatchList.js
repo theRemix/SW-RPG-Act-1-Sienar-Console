@@ -113,6 +113,7 @@ module.exports = menu => {
   ]);
 
   table.on('select', (obj, selectedIdx) => selectedIdx > directory.length ? menu.back() : null);
+  table.on('focus', _ => table.selected = 1);
 
   return table;
 };

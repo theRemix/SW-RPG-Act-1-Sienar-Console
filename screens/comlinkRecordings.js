@@ -115,6 +115,7 @@ module.exports = menu => {
     },
   });
   container.on('focus', _ => submenu.focus());
+  submenu.on('focus', _ => submenu.selected = 0);
 
   submenu.on('select', (obj, selectedIdx) => {
     if(selectedIdx === comLinkRecs.length){

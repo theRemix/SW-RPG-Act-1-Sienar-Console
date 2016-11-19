@@ -8,8 +8,9 @@ const screen = blessed.screen({
 
 const menu = require('./menu')(screen);
 
+let loggedIn = false;
 
-screen.displaySplash = () => exec('/bin/sh -c "clear && imgcat assets/sienar-logo.png"', (error, stdout, stderr) => {
+const displaySplash = () => exec('/bin/sh -c "clear && imgcat assets/sienar-logo.png"', (error, stdout, stderr) => {
   if (error) {
     console.error(`exec error: ${error}`);
     return;
@@ -18,15 +19,31 @@ screen.displaySplash = () => exec('/bin/sh -c "clear && imgcat assets/sienar-log
   process.stdout.write(stdout.toString());
 });
 
+screen.logout = _ => {
+  loggedIn = false;
+  displaySplash();
+};
+
+screen.on('keypress', (_, key) => {
+  if(!loggedIn && key.name === 'space'){
+    screen.realloc();
+    screen.append(menu);
+    menu.focus();
+    menu.selected = 0;
+    screen.render();
+    loggedIn = true;
+  }
+});
+
 
 const init = () => {
-
-  screen.append(menu);
 
   // Quit on Escape, q, or Control-C.
   screen.key(['escape', 'q', 'C-c'], function(ch, key) {
     return process.exit(0);
   });
+
+  displaySplash();
 
   // Render the screen.
   screen.render();

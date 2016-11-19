@@ -35,7 +35,7 @@ module.exports = screen => {
   const switchScreens = idx => {
     if(idx === mainMenuLabels.indexOf('Logout')){
       menu.detach();
-      screen.displaySplash();
+      screen.logout();
     }else{
       currentScreen.detach();
       currentScreen = mainMenuScreens.get(idx);
@@ -87,7 +87,6 @@ module.exports = screen => {
   menu.on('select', (obj, selectedIdx) => switchScreens(selectedIdx));
 
   screen.append(menu);
-  menu.focus();
 
   return menu;
 };

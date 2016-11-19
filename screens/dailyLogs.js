@@ -212,6 +212,7 @@ module.exports = menu => {
     },
   });
   container.on('focus', _ => submenu.focus());
+  submenu.on('focus', _ => submenu.selected = 1);
 
   submenu.on('keypress', (_, event) => {
     if(submenu.selected > logs.length) return;

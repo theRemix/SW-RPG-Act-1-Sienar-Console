@@ -132,6 +132,7 @@ module.exports = menu => {
     },
   });
   container.on('focus', _ => submenu.focus());
+  submenu.on('focus', _ => submenu.selected = 1);
 
   destinationSelector.on('select', (obj, selectedIdx) => {
     PodTwelve.Destination = PodDestinations[selectedIdx];
