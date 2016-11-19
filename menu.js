@@ -48,7 +48,7 @@ module.exports = screen => {
   let menu = list({
     top: 0,
     left: 0,
-    width: '20%',
+    width: '23%',
     height: '100%',
     items: mainMenuLabels,
     tags: true,

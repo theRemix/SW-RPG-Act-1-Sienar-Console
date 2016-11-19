@@ -3,7 +3,7 @@ module.exports = menu => {
   const table = listtable({
     top: 0,
     right: 0,
-    width: '70%',
+    width: '77%',
     height: '100%',
     tags: true,
     border: {

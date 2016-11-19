@@ -98,7 +98,7 @@ module.exports = menu => {
   const container = box({
     top: 0,
     right: 0,
-    width: '80%',
+    width: '77%',
     height: '100%',
     tags: true,
     keys: true,
