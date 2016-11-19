@@ -9,7 +9,7 @@ const screen = blessed.screen({
 const menu = require('./menu')(screen);
 
 
-const displaySplash = () => exec('/bin/sh -c "clear && imgcat assets/sienar-logo.png"', (error, stdout, stderr) => {
+screen.displaySplash = () => exec('/bin/sh -c "clear && imgcat assets/sienar-logo.png"', (error, stdout, stderr) => {
   if (error) {
     console.error(`exec error: ${error}`);
     return;

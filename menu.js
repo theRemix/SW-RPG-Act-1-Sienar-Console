@@ -33,10 +33,15 @@ const mainMenuScreens = new Map();
 module.exports = screen => {
 
   const switchScreens = idx => {
-     currentScreen.detach();
-    currentScreen = mainMenuScreens.get(idx);
-    screen.append(currentScreen);
-    if (idx !== BLANK_IDX){  currentScreen.focus(); }
+    if(idx === mainMenuLabels.indexOf('Logout')){
+      menu.detach();
+      screen.displaySplash();
+    }else{
+      currentScreen.detach();
+      currentScreen = mainMenuScreens.get(idx);
+      screen.append(currentScreen);
+      if (idx !== BLANK_IDX){  currentScreen.focus(); }
+    }
     screen.render();
   };
 
