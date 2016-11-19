@@ -48,7 +48,7 @@ module.exports = screen => {
   let menu = list({
     top: 0,
     left: 0,
-    width: '30%',
+    width: '20%',
     height: '100%',
     items: mainMenuLabels,
     tags: true,
@@ -60,15 +60,17 @@ module.exports = screen => {
       fg: 'white',
       bg: '#000',
       border: {
-        fg: '#f0f0f0'
+        fg: '#ffffff'
       },
       selected: {
-        fg: '#6699ff',
-        bg: '#f9f9f9'
+        fg: '#000000',
+        bg: '#ffffff',
+        border: {
+          fg: '#ffffff',
+        }
       },
       item: {
-        fg: '#6699ff',
-        bg: '#f9f900'
+        fg: '#999999',
       }
     }
   });

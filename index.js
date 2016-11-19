@@ -10,22 +10,25 @@ const menu = require('./menu')(screen);
 
 let loggedIn = false;
 
+const logo = blessed.image({
+  file : './assets/Sienar-sm.png',
+  type : 'ansi'
+});
 const displaySplash = () => {
   menu.detach();
-  screen.append( blessed.image({
-    file : './assets/Sienar-sm.png',
-    type : 'ansi'
-  }));
+  screen.append( logo );
   screen.render();
 };
 
 screen.logout = _ => {
   loggedIn = false;
+  screen.append( logo );
   displaySplash();
 };
 
 screen.on('keypress', (_, key) => {
   if(!loggedIn && key.name === 'space'){
+    logo.detach();
     screen.realloc();
     screen.append(menu);
     menu.focus();

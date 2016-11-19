@@ -44,7 +44,7 @@ module.exports = menu => {
   const submenu = listtable({
     top: 0,
     left: 0,
-    width: '60%',
+    width: '70%',
     height: '100%',
     tags: true,
     border: {
@@ -82,7 +82,7 @@ module.exports = menu => {
   const destinationSelector = list({
     top: 0,
     right: 0,
-    width: '40%',
+    width: '30%',
     height: '100%',
     content: '',
     border: {
@@ -94,24 +94,26 @@ module.exports = menu => {
       fg: 'white',
       bg: '#000',
       border: {
-        fg: '#f0f0f0'
+        fg: '#ffffff'
       },
       selected: {
-        fg: '#6699ff',
-        bg: '#f9f9f9'
+        fg: '#000000',
+        bg: '#ffffff',
+        border: {
+          fg: '#ffffff',
+        }
       },
       item: {
-        fg: '#6699ff',
-        bg: '#f9f900'
+        fg: '#999999',
       }
-    },
+    }
   });
   setSubmenuData();
 
   const container = box({
     top: 0,
     right: 0,
-    width: '70%',
+    width: '80%',
     height: '100%',
     tags: true,
     keys: true,
