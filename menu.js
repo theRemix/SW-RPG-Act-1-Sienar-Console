@@ -6,6 +6,7 @@ const {
 const {
   republicWatchList,
   comlinkRecordings,
+  dailyLogs,
 } = require('./screens');
 
 const mainMenuLabels = [
@@ -74,6 +75,7 @@ module.exports = screen => {
   mainMenuScreens.set(BLANK_IDX, blank);
   mainMenuScreens.set(0, republicWatchList(menu));
   mainMenuScreens.set(1, comlinkRecordings(menu));
+  mainMenuScreens.set(2, dailyLogs(menu));
 
   menu.on('select', (obj, selectedIdx) => switchScreens(selectedIdx));
 
