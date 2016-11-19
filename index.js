@@ -10,14 +10,14 @@ const menu = require('./menu')(screen);
 
 let loggedIn = false;
 
-const displaySplash = () => exec('/bin/sh -c "clear && imgcat assets/sienar-logo.png"', (error, stdout, stderr) => {
-  if (error) {
-    console.error(`exec error: ${error}`);
-    return;
-  }
-
-  process.stdout.write(stdout.toString());
-});
+const displaySplash = () => {
+  menu.detach();
+  screen.append( blessed.image({
+    file : './assets/Sienar-sm.png',
+    type : 'ansi'
+  }));
+  screen.render();
+};
 
 screen.logout = _ => {
   loggedIn = false;
